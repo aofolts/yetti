@@ -1,0 +1,22 @@
+@lh: 1.25em;
+@ff: 'Arial',sans-serif;
+@c: #444;
+
+html {
+  .lh(@lh);
+  .ff(@ff);
+  .c(@c);
+}
+
+@h1: 6.5rem;
+@h1-lh: @lh;
+@h1-ff: @ff;
+@h1-fw: 600;
+
+h1 {
+  .fs(@h1);
+  .lh(@h1-lh);
+  .ff(@h1-ff);
+  .fw(@h1-fw);
+  .c(inherit);
+}
