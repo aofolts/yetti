@@ -1,0 +1,20 @@
+.shadow (@size:@l,@spread:0,@opacity:50%) {
+
+  .bxs(0,0,@size,@spread,fade(black,@opacity));
+}
+
+.sqew(
+  @side: top
+  ) {
+
+    .mt(calc(-1 ~'*' var(--vpad))); .of;
+    &:before {
+      .cnt; .w(140%); .h(80rem); .bc(white);
+      .abs; .t; .l(50%); .z(0);
+      .trf(translate(-50%,-50%) rotate(-12.5deg));
+      @media @mobile {.h(35rem);}
+      @media @tablet {.h(50rem);}
+      @media @laptop {.h(60rem);}
+    }
+
+}

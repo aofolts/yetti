@@ -1,7 +1,7 @@
 {
   "name": "yetti",
-  "version": "1.0.2",
-  "description": "An essential CSS Less library.",
+  "version": "1.0.3",
+  "description": "A Less.js library that makes CSS less hairy.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

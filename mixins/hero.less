@@ -1,0 +1,94 @@
+/////////////////////////////////////////////////////////////////////
+// HERO (hro)
+/////////////////////////////////////////////////////////////////////
+
+.hero(
+  @align: center,
+  @background: @dark,
+  @height: tall,
+  @headline-width: default,
+  @headline-primary-font-size: default,
+  @preset: none
+  ) {
+
+  .bg(@background);
+  &:extend(.hero);
+
+  & when (@height = tall)   {.h(80rem);}
+  & when (@height = medium) {.h(60rem);}
+  & when (@height = full)   {.h(100vh);}
+  & when (@height = short)  {.h(40rem);}
+
+  @media @mobile {
+    & when (@height = tall) {.h(calc(100vh ~'-' var(--header-main-docked-height)));}
+  }
+
+  .hero__headline,.headline-primary {
+
+    .mb(@m); text-wrap: balance;
+
+    & when (@headline-primary-font-size = default) {.fs(@h1);}
+    & when (@headline-primary-font-size = large) {.fs(@l);}
+
+    & when (@height = short) {.mb(0);}
+
+    @media @mobile {.fs(@h2);}
+
+  }
+
+  .hero__bg,.bg {.obf; .wh; .l; .t; .abs; filter: brightness(75%);}
+
+  .hero__content, .content {
+
+    .abs; .l(50%); .t(50%); .trf(translate(-50%,-50%)); .c(white);
+    .pad(var(--h)); .z(5);
+
+    & when (@align = center) {
+      .ta(center); .w(100rem); .mw;
+    }
+
+    & when (@align = left) {
+
+      @media @min-laptop {
+        .w(@main); .mw; .ta(left); .w(75%);
+        .hero__headline,.headline-primary {
+          & when (@headline-width = wide)    {.mw(80rem);}
+          & when (@headline-width = medium)  {.mw(100rem);}
+          & when (@headline-width = default) {.mw(@blog);}
+        }
+        .hero__copy {.mw(calc(@blog ~'-' @ml));}
+      }
+
+      @media @laptop {.w(100rem);}
+
+      @media @max-tablet {
+        .ta(center); .mar(0 auto); .w;
+        .headline-primary {.mw;}
+      }
+
+    }
+
+  }
+
+  .hero-buttons();
+
+}
+
+.hero-buttons() {
+
+  .button-primary {
+    .button(
+      @fill: white
+    );
+  }
+
+  .button-secondary {
+    @media @min-laptop {.ml(@s);}
+    @media @max-tablet {.mt(@s);}
+    .button(
+      @fill: none,
+      @border-color: white
+    );
+  }
+
+}

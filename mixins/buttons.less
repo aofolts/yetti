@@ -1,0 +1,61 @@
+@button-radius: 1000px;
+@button-font-weight: 400;
+
+.button(
+  @color: default,
+  @radius: @button-radius,
+  @fill: @prime,
+  @font-size: @p,
+  @border-color: @prime,
+  @capitalization: default,
+  @padding: default,
+  @size: default
+  ) {
+
+  .fs(@font-size); .whs(nowrap);
+  .fw(@button-font-weight);
+
+  & when (@radius = default) {.br(1000px);}
+  & when (isnumber(@radius)) {.br(@radius);}
+  & when (@radius = none) {.br(0);}
+
+  & when not (@fill = none) {
+
+    .bd(@bd solid @fill);
+    .bg(@fill);
+
+    &:hover {
+      .trf(scale(1.05));
+    }
+
+    & when (lightness(@fill) < 75%) {
+      .c(white);
+    }
+
+    & when (lightness(@fill) > 75%) {.c(@prime);}
+
+  }
+
+  & when (@size = small) {.fs(@p2);}
+  & when (@font-size = small) {.fs(@p2);}
+
+  & when not (@capitalization = default) {
+    .ttf(@capitalization);
+  }
+
+  & when (@fill = none) {
+
+    .bd(@bd solid @border-color);
+    .c(@border-color);
+
+    &:hover {
+      .bg(@border-color);
+      .c(@prime);
+    }
+
+  }
+
+  & when (@padding = default) {.pad(.66em 1.25em); .ib;}
+  & when (@padding = large) {.pad(1em 1.5em);}
+
+}
