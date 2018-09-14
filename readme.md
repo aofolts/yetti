@@ -8,6 +8,7 @@ Contains abbreviated, parametric mixins for commmon CSS properties.
 
 **Example:**
 
+```
 h1 {
   .fs(6.5rem); // font-size
   .lh(1em); // line-height
@@ -19,3 +20,4 @@ h1 {
   .t; // top: 0
   .l; // left: 0
 }
+```
