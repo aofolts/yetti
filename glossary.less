@@ -71,7 +71,10 @@
 .txdc (@txdc) {text-decoration-color: @txdc;}
 .ta   (@ta:center) {text-align:@ta;}
 
-.upper () {text-transform: uppercase;}
+.left   () {text-align: left;}
+.right  () {text-align: right;}
+.center () {text-align: center};
+.upper  () {text-transform: uppercase;}
 
 /////////////////////////////////////////////////////////////////////
 // GRID (grd)
@@ -187,6 +190,7 @@
 .ai   (@ai:flex-start) {align-items:@ai;}
 .as   (@as) {align-self: @as;}
 .or   (@or:-1) {order:@or;}
+.flex {display: flex;}
 .flxg (@flxg: 1) {flex-grow: @flxg;}
 .flxs (@flxs: 0) {flex-shrink: @flxs;}
 .flxd (@flxd: column) {flex-direction: @flxd;}
@@ -195,6 +199,7 @@
 // DISPLAY (dsp)
 /////////////////////////////////////////////////////////////////////
 
+.block ()    {display: block;}
 .flx   ()    {display:flex;}
 .iflex ()    {display:inline-flex;}
 .jcsb  ()    {justify-content:space-between;}
