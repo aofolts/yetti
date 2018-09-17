@@ -36,16 +36,35 @@
 // HEADLINES
 ////////////////////////////////////////////////////////
 
-@h3: 4rem;
+@h1: 6.5rem;
+
+h1 {
+  .fs(@h1); .mar(1em 0 .5em);
+
+  @media @phone {
+    .fs(@h2);
+  }
+}
+
+@h2: 4rem;
+
+h2 {
+  .fs(@h2); 
+  .mar(1em 0 .5em);
+}
+
+@h3: 3rem;
 
 h3 {
   .fs(@h3);
+  .mar(1em 0 .5em);
 }
 
 @h5: @p;
 
 h5 {
   .fs(@h5);
+  .mar(1em 0 .5em);
 }
 
 ////////////////////////////////////////////////////////
@@ -101,7 +120,15 @@ body {
 @media @desktop {html {.fs(10px);}}
 @media @laptop  {html {.fs(9px);}}
 @media @tablet  {html {.fs(8px);}}
-@media @phone  {html {.fs(8px);}}
+
+@media @phone  {
+  html {.fs(8px);}
+
+  :root {
+    --v: 6rem;
+    --h: @s;
+  }
+}
 
 ////////////////////////////////////////////////////////
 // MEDIA

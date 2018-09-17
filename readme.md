@@ -2,9 +2,9 @@
 
 Yetti is a platform-agnostic Less.js library that uses abbreviated properties to make writing CSS faster and less verbose.
 
-## glossary.js
+## Glossary
 
-Contains abbreviated, parametric mixins for commmon CSS properties.
+[glossary.less](https://github.com/aofolts/yetti/blob/master/glossary.less): Contains abbreviated, parametric mixins for commmon CSS properties.
 
 **Example:**
 
