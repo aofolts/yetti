@@ -1,6 +1,6 @@
 {
   "name": "yetti",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "A Less.js library that makes CSS less hairy.",
   "main": "index.js",
   "scripts": {
