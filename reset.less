@@ -20,13 +20,13 @@ li {
 ////////////////////////////////////////////////////////
 
 h1,h2,h3,h4,h5,h6,p,.p2 {
-  .lh(@lh);
+  .lh(@lineHeight);
 }
 
 h1,h2,h3,h4,h5,p,hr,img {.rel; .mt(0);}
 
 p,.p2 {
-  .lh(@lh); .fw(inherit);
+  .lh(@lineHeight); .fw(inherit);
 }
 
 header, body, hr {.pad(0); .mar(0);}
@@ -73,6 +73,7 @@ iframe {
 /////////////////////////////////////////////////////////////////////
 
 select {
+  .br(0px);
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
 }

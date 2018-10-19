@@ -1,6 +1,61 @@
 @import (reference) 'reference.less';
 @import 'reset.less';
 
+@import 'glossary.less';
+
+////////////////////////////////////////////////////////
+// APPEARANCE
+////////////////////////////////////////////////////////
+
+@stroke: 2px;
+
+/////////////////////////////////////////////////////////////////////
+// COLORS (clr)
+/////////////////////////////////////////////////////////////////////
+
+@prime:  blue; // Primary Coloy
+@accent: green; // Accent Color
+@black: #333;
+
+/////////////////////////////////////////////////////////////////////
+// SCREENS (scn)
+/////////////////////////////////////////////////////////////////////
+
+@phoneMax: 480px;
+@tabletMin: 481px;
+@tabletMax: 767px;
+@laptopMin: 768px;
+@laptopMax: 1280px;
+@desktopMin: 1281px;
+
+
+@phone:  ~'screen and (max-width: @{phoneMax})';
+@tablet:  ~'screen and (min-width: @{tabletMin}) and (max-width: @{tabletMax})';
+@laptop:  ~'screen and (min-width: @{laptopMin}) and (max-width: @{laptopMax})';
+@desktop: ~'screen and (min-width: @{desktopMin})';
+
+@minLaptop: ~'screen and (min-width:@{laptopMin})';
+@minTablet: ~'screen and (min-width:@{tabletMin})';
+@maxTablet: ~'screen and (max-width:@{tabletMax})';
+@maxLaptop: ~'screen and (max-width:@{laptopMax})';
+@minDesktop : ~'screen and (min-width:@{desktopMin})';
+
+////////////////////////////////////////////////////////
+// SIZES
+////////////////////////////////////////////////////////
+
+@xxs: 1rem;
+@xs: 1.5rem;
+@s: 2.5rem;
+@ms: 3rem;
+@m: 5rem;
+@ml: 7rem;
+@l: 9rem;
+@xl: 12rem;
+
+@blog: 700px;
+@main: 1400px;
+
 ////////////////////////////////////////////////////////
 // CARDS
 ////////////////////////////////////////////////////////
@@ -33,8 +88,10 @@
 }
 
 ////////////////////////////////////////////////////////
-// HEADLINES
+// HEADINGS
 ////////////////////////////////////////////////////////
+
+@headingColor: @black;
 
 @h1: 6.5rem;
 
@@ -83,11 +140,12 @@ h5 {
 // PARAGRAPHS
 ////////////////////////////////////////////////////////
 
-@p2: 2.2rem;
+@paragraphColor: lighten(@headingColor,10%);
+@c: @paragraphColor;
 
-.p2 {
-  .fs(@p2);
-}
+
+@paragraphFontSize: 2.3rem;
+@p: @paragraphFontSize;
 
 ////////////////////////////////////////////////////////
 // REM SIZES (rms)
@@ -116,10 +174,14 @@ body {
 }
 
 ////////////////////////////////////////////////////////
-// LONG-FORM CONTENT
+// RICH CONTENT CONTENT
 ////////////////////////////////////////////////////////
 
 .richContent() {
+  > :first-child {
+    .mt(0);
+  }
+
   img {
     .w; .mw(@main); .mar(0 auto @l);
   }
@@ -127,31 +189,31 @@ body {
   // Block Quotes
 
   blockquote {
-    .ml(@lh / 2); .fs(@p * 1.25); .fst(italic); .o(.5);
+    .ml(@lineHeight / 2); .fs(@p * 1.25); .fst(italic); .o(.5);
   }
 
   // Lists
 
   li {
-    .mb(@lh * .5);
+    .mb(@lineHeight * .5);
   }
 
   ul {
 
     li {
-      .ml(@lh);
+      .ml(@lineHeight);
       .lst(disc);
     }
   }
 
   ol {
     li {
-      .ml(@lh / 2);
+      .ml(@lineHeight / 2);
     }
   }
 
   h2,h3,h4,h5,h6 {
-    .mt(@lh);
+    .mt(@lineHeight);
   }
 };
 
@@ -168,17 +230,17 @@ body {
 ////////////////////////////////////////////////////////
 
 @ratio: 1.618;
-
+@goldenRatio: 1.618;
 
 ////////////////////////////////////////////////////////
 // TYPE
 ////////////////////////////////////////////////////////
 
-@lh: 1.25em;
-@ff: 'Arial',sans-serif;
-@fw: 300;
-@c: #444;
-@mb: 1.4em;
+@lineHeight: 1.25em;
+@fontFamily: 'Arial',sans-serif;
+@fontWeight: 400;
+@color: @black;
+@marginBottom: 1.4em;
 
 @light: 300;
 @regular: 400;
@@ -187,13 +249,11 @@ body {
 @heavy: 700;
 
 body {
-  .ff(@ff);
-  .lh(@lh);
-  .c(@c);
+  .ff(@fontFamily);
+  .lh(@lineHeight);
+  .c(@color);
 }
 
-@pBold: @regular;
-
 strong,bold {
-  .fw(@pBold);
+  .fw(@bold);
 }

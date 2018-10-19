@@ -21,3 +21,13 @@ h1 {
   .l; // left: 0
 }
 ```
+
+## Naming Conventions
+
+Use general-to-specific camel case names:
+
+❎ heavyStroke: 4px;
+✅ strokeHeavy: 4px;
+
+❎ mainNavHeight: 4px;
+✅ navMainHeight: 4px;
