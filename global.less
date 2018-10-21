@@ -137,12 +137,13 @@ h5 {
 }
 
 ////////////////////////////////////////////////////////
-// PARAGRAPHS
+// PARAGRAPHS (prg)
 ////////////////////////////////////////////////////////
 
-@paragraphColor: lighten(@headingColor,10%);
+@paragraphColor: @color;
 @c: @paragraphColor;
 
+@paragraphOpacity: 95%;
 
 @paragraphFontSize: 2.3rem;
 @p: @paragraphFontSize;
@@ -177,13 +178,13 @@ body {
 // RICH CONTENT CONTENT
 ////////////////////////////////////////////////////////
 
-.richContent() {
+.richText() {
   > :first-child {
     .mt(0);
   }
 
   img {
-    .w; .mw(@main); .mar(0 auto @l);
+    .w; .mw(@main); .mar(0 auto @m);
   }
 
   // Block Quotes
@@ -221,8 +222,12 @@ body {
 // MEDIA
 ////////////////////////////////////////////////////////
 
-.mediaBackground {
+@mediaBackground: {
   .wh; .obf; .abs; .t; .l;
+};
+
+.mediaBackground {
+  @mediaBackground();
 }
 
 ////////////////////////////////////////////////////////
